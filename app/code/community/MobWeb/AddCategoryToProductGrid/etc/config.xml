@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MobWeb_AddCategoryToProductGrid>
+            <version>1.0.0</version>
+        </MobWeb_AddCategoryToProductGrid>
+    </modules>
+    <global>
+        <models>
+            <addcategorytoproductgrid>
+                <class>MobWeb_AddCategoryToProductGrid_Model</class>
+            </addcategorytoproductgrid>
+        </models>
+        <helpers>
+            <addcategorytoproductgrid>
+                <class>MobWeb_AddCategoryToProductGrid_Helper</class>
+            </addcategorytoproductgrid>
+        </helpers>
+        <blocks>
+            <addcategorytoproductgrid>
+                <class>MobWeb_AddCategoryToProductGrid_Block</class>
+            </addcategorytoproductgrid>
+        </blocks>
+    </global>
+    <adminhtml>
+        <events>
+            <!-- This observer is called before a block is rendered, and if it's product catalog grid block, adds our custom column -->
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <addcategorytoproductgrid>
+                        <class>addcategorytoproductgrid/observer</class>
+                        <method>addCategoryFilterToProductGrid</method>
+                    </addcategorytoproductgrid>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+    </adminhtml>
+</config>

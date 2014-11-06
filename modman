@@ -1,0 +1,6 @@
+app/code/community/MobWeb/AddCategoryToProductGrid app/code/community/MobWeb/AddCategoryToProductGrid/
+
+app/etc/modules/MobWeb_AddCategoryToProductGrid.xml app/etc/modules/MobWeb_AddCategoryToProductGrid.xml
+
+# Clear the cache
+@shell   rm -rf $PROJECT/var/cache/* && echo "Magento Cache cleared"
